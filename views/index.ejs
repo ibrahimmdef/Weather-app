@@ -24,6 +24,7 @@
             placeholder="Write your city"
             required
           />
+
           <button type="submit" class="search-btn">
             <i class="fa-solid fa-magnifying-glass"></i>
           </button>
@@ -76,9 +77,12 @@
               <h3><%= clouds %>%</h3>
             </div>
             <div class="box">
-              <h4>UV Index</h4>
-              <i class="fa-solid fa-sun-plant-wilt"></i>
-              <h3>0</h3>
+              <h4>Coordinates</h4>
+              <i class="fa-solid fa-globe"></i>
+              <span style="margin-top: 10px">
+                <h4>Lat : <%= lat %>°</h4>
+                <h4>Lng : <%= lon %>°</h4>
+              </span>
             </div>
             <div class="box">
               <h4>Pressure</h4>
