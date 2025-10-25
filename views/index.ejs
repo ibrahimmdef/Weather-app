@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="../public/styles/style.css" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css"
+      integrity="sha512-2SwdPD6INVrV/lHTZbO2nodKhrnDdJK9/kg2XD1r9uGqPo1cUbujc+IYdlYdEErWNu69gVcYgdxlmVmzTWnetw=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+    <title>Weather</title>
+  </head>
+  <body>
+    <div class="container">
+      <div class="left-section">
+        <div class="input-section">
+          <input type="text" id="search" placeholder="Write your location" />
+          <button type="button" class="search-btn">
+            <i class="fa-solid fa-magnifying-glass"></i>
+          </button>
+        </div>
+
+        <div class="today">
+          <img src="https://openweathermap.org/img/wn/10d@4x.png" alt="" />
+          <h2>15°C</h2>
+          <h4>Feels like 10°C</h4>
+          <h4>Saturday, April 6 at 6:16 AM</h4>
+          <h4>London</h4>
+        </div>
+      </div>
+
+      <div class="right-section">
+        <div class="details-section">
+          <h2>Today's Highlights</h2>
+
+          <div class="details-container">
+            <div class="box">
+              <h4>Humidity</h4>
+              <i class="fa-solid fa-droplet"></i>
+              <h3>78%</h3>
+            </div>
+            <div class="box">
+              <h4>Wind Speed</h4>
+              <i class="fa-solid fa-wind"></i>
+              <h3>4m/s</h3>
+            </div>
+            <div class="box sun-time">
+              <div class="sun">
+                <i class="fa-solid fa-sun"></i>
+                <span>
+                  <h5>7:41 AM</h5>
+                  <h5>Sunrise</h5>
+                </span>
+              </div>
+              <div class="sun">
+                <i class="fa-regular fa-sun"></i>
+                <span>
+                  <h5>7:41 PM</h5>
+                  <h5>Sunset</h5>
+                </span>
+              </div>
+            </div>
+            <div class="box">
+              <h4>Clouds</h4>
+              <i class="fa-solid fa-cloud"></i>
+              <h3>100%</h3>
+            </div>
+            <div class="box">
+              <h4>UV Index</h4>
+              <i class="fa-solid fa-sun-plant-wilt"></i>
+              <h3>0</h3>
+            </div>
+            <div class="box">
+              <h4>Pressure</h4>
+              <i class="fa-solid fa-wind"></i>
+              <h3>1001 hPa</h3>
+            </div>
+          </div>
+        </div>
+
+        <h2>4 Days Forecast</h2>
+
+        <div class="days">
+          <div class="day">
+            <h6>Saturday, April 7</h6>
+            <img src="https://openweathermap.org/img/wn/10d@2x.png" alt="" />
+            <span>overcast clouds</span>
+            <h5>15°C</h5>
+          </div>
+          <div class="day">
+            <h6>Saturday, April 8</h6>
+            <img src="https://openweathermap.org/img/wn/10d@2x.png" alt="" />
+            <span>overcast clouds</span>
+            <h5>15°C</h5>
+          </div>
+          <div class="day">
+            <h6>Saturday, April 9</h6>
+            <img src="https://openweathermap.org/img/wn/10d@2x.png" alt="" />
+            <span>overcast clouds</span>
+            <h5>15°C</h5>
+          </div>
+          <div class="day">
+            <h6>Saturday, April 10</h6>
+            <img src="https://openweathermap.org/img/wn/10d@2x.png" alt="" />
+            <span>overcast clouds</span>
+            <h5>15°C</h5>
+          </div>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>
