@@ -126,7 +126,7 @@ async function getWeather(city) {
     };
   } catch (error) {
     console.error("Weather API Error:", error.message);
-    return { error: "City not found or API error" }; // return error to template
+    return { error: "City not found or API error please try again" }; // return error to template
   }
 }
 
@@ -140,6 +140,7 @@ app.post("/", async (req, res) => {
     const data = await getWeather(req.body.city); // user input city
     res.render("index", data);
   } catch (error) {
+    res.render("index");
     console.error(error.message);
   }
 });

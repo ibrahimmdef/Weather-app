@@ -30,6 +30,10 @@
           </button>
         </form>
 
+        <% if (locals.error) { %>
+        <p class="error"><%= error %></p>
+        <% }else{ %>
+
         <div class="today">
           <img src="<%= todayIcon %>" alt="" />
           <h2><%= temperature%>°C</h2>
@@ -133,6 +137,7 @@
           </div>
         </div>
       </div>
+      <% } %>
     </div>
   </body>
 </html>
