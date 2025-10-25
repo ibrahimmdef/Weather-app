@@ -1,12 +1,12 @@
-# Node.js bağımlılıkları
+
 node_modules/
 
-# Ortam değişkenleri
+
 .env
 
-# Log dosyaları
+
 *.log
 
-# Sistem dosyaları
+
 .DS_Store
 Thumbs.db
