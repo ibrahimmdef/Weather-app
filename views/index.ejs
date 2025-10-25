@@ -3,7 +3,7 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link rel="stylesheet" href="../public/styles/style.css" />
+    <link rel="stylesheet" href="/styles/style.css" />
     <link
       rel="stylesheet"
       href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css"
@@ -16,19 +16,26 @@
   <body>
     <div class="container">
       <div class="left-section">
-        <div class="input-section">
-          <input type="text" id="search" placeholder="Write your location" />
-          <button type="button" class="search-btn">
+        <form class="input-section" action="/" method="post">
+          <input
+            type="text"
+            id="search"
+            name="city"
+            placeholder="Write your city"
+            required
+          />
+          <button type="submit" class="search-btn">
             <i class="fa-solid fa-magnifying-glass"></i>
           </button>
-        </div>
+        </form>
 
         <div class="today">
-          <img src="https://openweathermap.org/img/wn/10d@4x.png" alt="" />
-          <h2>15°C</h2>
-          <h4>Feels like 10°C</h4>
-          <h4>Saturday, April 6 at 6:16 AM</h4>
-          <h4>London</h4>
+          <img src="<%= todayIcon %>" alt="" />
+          <h2><%= temperature%>°C</h2>
+          <h4>Feels like <%= feels%>°C</h4>
+          <h4 style="color: #aa9696a4">"<%=description %>"</h4>
+          <h4><%= time %></h4>
+          <h4><%= city %>, <%= country %></h4>
         </div>
       </div>
 
@@ -40,25 +47,25 @@
             <div class="box">
               <h4>Humidity</h4>
               <i class="fa-solid fa-droplet"></i>
-              <h3>78%</h3>
+              <h3><%=humidity%>%</h3>
             </div>
             <div class="box">
               <h4>Wind Speed</h4>
               <i class="fa-solid fa-wind"></i>
-              <h3>4m/s</h3>
+              <h3><%=windSpeed%>m/s</h3>
             </div>
             <div class="box sun-time">
               <div class="sun">
                 <i class="fa-solid fa-sun"></i>
                 <span>
-                  <h5>7:41 AM</h5>
+                  <h5><%= sunriseTime%></h5>
                   <h5>Sunrise</h5>
                 </span>
               </div>
               <div class="sun">
                 <i class="fa-regular fa-sun"></i>
                 <span>
-                  <h5>7:41 PM</h5>
+                  <h5><%= sunsetTime%></h5>
                   <h5>Sunset</h5>
                 </span>
               </div>
@@ -66,7 +73,7 @@
             <div class="box">
               <h4>Clouds</h4>
               <i class="fa-solid fa-cloud"></i>
-              <h3>100%</h3>
+              <h3><%= clouds %>%</h3>
             </div>
             <div class="box">
               <h4>UV Index</h4>
@@ -76,7 +83,7 @@
             <div class="box">
               <h4>Pressure</h4>
               <i class="fa-solid fa-wind"></i>
-              <h3>1001 hPa</h3>
+              <h3><%= pressure %> hPa</h3>
             </div>
           </div>
         </div>
@@ -85,28 +92,40 @@
 
         <div class="days">
           <div class="day">
-            <h6>Saturday, April 7</h6>
-            <img src="https://openweathermap.org/img/wn/10d@2x.png" alt="" />
-            <span>overcast clouds</span>
-            <h5>15°C</h5>
+            <h6><%= forecast[0].weeklyDate %></h6>
+            <img src="<%= forecast[0].icon %>" alt="" />
+            <span><%= forecast[0].description %></span>
+            <h5>
+              <%= forecast[0].tempMax %>°C&nbsp;&nbsp;&nbsp;&nbsp;<%=
+              forecast[0].tempMin %> °C
+            </h5>
           </div>
           <div class="day">
-            <h6>Saturday, April 8</h6>
-            <img src="https://openweathermap.org/img/wn/10d@2x.png" alt="" />
-            <span>overcast clouds</span>
-            <h5>15°C</h5>
+            <h6><%= forecast[1].weeklyDate %></h6>
+            <img src="<%= forecast[1].icon %>" alt="" />
+            <span><%= forecast[1].description %></span>
+            <h5>
+              <%= forecast[1].tempMax %>°C&nbsp;&nbsp;&nbsp;&nbsp;<%=
+              forecast[1].tempMin %> °C
+            </h5>
           </div>
           <div class="day">
-            <h6>Saturday, April 9</h6>
-            <img src="https://openweathermap.org/img/wn/10d@2x.png" alt="" />
-            <span>overcast clouds</span>
-            <h5>15°C</h5>
+            <h6><%= forecast[2].weeklyDate %></h6>
+            <img src="<%= forecast[2].icon %>" alt="" />
+            <span><%= forecast[2].description %></span>
+            <h5>
+              <%= forecast[2].tempMax %>°C&nbsp;&nbsp;&nbsp;&nbsp;<%=
+              forecast[2].tempMin %> °C
+            </h5>
           </div>
           <div class="day">
-            <h6>Saturday, April 10</h6>
-            <img src="https://openweathermap.org/img/wn/10d@2x.png" alt="" />
-            <span>overcast clouds</span>
-            <h5>15°C</h5>
+            <h6><%= forecast[3].weeklyDate %></h6>
+            <img src="<%= forecast[3].icon %>" alt="" />
+            <span><%= forecast[3].description %></span>
+            <h5>
+              <%= forecast[3].tempMax %>°C&nbsp;&nbsp;&nbsp;&nbsp;<%=
+              forecast[3].tempMin %> °C
+            </h5>
           </div>
         </div>
       </div>
