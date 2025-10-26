@@ -90,12 +90,15 @@ async function getWeather(city) {
     const forecast = await forecastApi(lat, lon, apiKey);
 
     return {
-      time: new Date(response.data.dt * 1000).toLocaleDateString("en-us", {
+      time: new Date(
+        (response.data.dt + response.data.timezone) * 1000
+      ).toLocaleDateString("en-US", {
         weekday: "long",
         day: "numeric",
         month: "long",
         hour: "2-digit",
         minute: "2-digit",
+        timeZone: "UTC",
       }),
       todayIcon: `https://openweathermap.org/img/wn/${response.data.weather[0].icon}@4x.png`,
       temperature: response.data.main.temp.toFixed(0),
@@ -106,18 +109,19 @@ async function getWeather(city) {
       humidity: response.data.main.humidity,
       windSpeed: response.data.wind.speed,
       sunriseTime: new Date(
-        response.data.sys.sunrise * 1000
+        (response.data.sys.sunrise + response.data.timezone) * 1000
       ).toLocaleTimeString("en-US", {
         hour: "2-digit",
         minute: "2-digit",
+        timeZone: "UTC",
       }),
-      sunsetTime: new Date(response.data.sys.sunset * 1000).toLocaleTimeString(
-        "en-US",
-        {
-          hour: "2-digit",
-          minute: "2-digit",
-        }
-      ),
+      sunsetTime: new Date(
+        (response.data.sys.sunset + response.data.timezone) * 1000
+      ).toLocaleTimeString("en-US", {
+        hour: "2-digit",
+        minute: "2-digit",
+        timeZone: "UTC",
+      }),
       clouds: response.data.clouds.all,
       lat,
       lon,
